@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+	<head>
+		<script language="JavaScript">
+
+		function address1(){
+			var form = document.forms[0];
+			var addOne = form.add1.value;
+			if (addOne==null || addOne==""){
+				alert("Address 1 must be filled out");
+				return false;
+			}
+		}
+		function address2(){
+			var form = document.forms[0];
+			var addTwo = form.add2.value;
+		}
+		function city(){
+			var form = document.forms[0];
+			var cit = form.cit1.value;
+			if (cit==null || cit==""){
+				alert("City must be filled out");
+				return false;
+			}
+		}
+		function state(){
+			var form = document.forms[0];
+			var sta = form.sta1.value;
+			
+				alert("State must be selected");
+		}
+		function zipcode(){
+			var form = document.forms[0];
+			var zip = form.zip1.value;
+			var pattern=/^\d{5}([\-]\d{4})?$/;
+			
+			if (!(pattern.test(zip))){
+				alert("Zipcode must be filled out with 5 digits");
+			}
+		}
+		function phoneNumber(){
+			var form = document.forms[0];
+			var phone = form.phone1.value;
+			var stripped = phone.value.replace(/[\(\)\.\-\ ]/g, '');
+			if (!(stripped.length == 10)){
+				alert("Phone number must be filled out");
+			}
+		}
+		function email(){
+			var form = document.forms[0];
+			var ema = form.ema1.value;
+			var atpos=ema.indexOf("@");
+			var dotpos=ema.lastIndexOf(".");
+			if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length){
+				alert("Not a valid e-mail address");
+				return false;
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<form name=f>
+			Address 1:<br>
+			<input type=text name=add1 value="">  
+			<br><br>
+			Address 2:<br>
+			<input type=text name=add2 value="">
+			<br><br>
+			City:<br>
+			<input type=text name=cit1 value="">
+			<br><br>
+			State:<br>
+			<input type=text name=sta1 value="">
+			<br><br>
+			Zipcode:<br>
+			<input type=text name=zip1 value="">
+			<br><br>
+			Phone Number:<br>
+			<input type=text name=phone1 value="">
+			<br><br>
+			Email:<br>
+			<input type=text name=ema1 value="">
+			<br><br>
+			<input type=button value=validate onclick="JavaScript:address1();address2();city();state();zipcode();phoneNumber();email();">
+		</form>
+	</body>
+</html>
+
+
+ <!--form field validation >
+ 
+ 
